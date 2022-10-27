@@ -1,6 +1,7 @@
 import "dotenv/config";
 import "./db";
 import "./models/Video";
+import "./models/User";
 import app from "./app.js";
 
 const PORT = process.env.GLOBAL_PORT;

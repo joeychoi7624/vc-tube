@@ -212,3 +212,5 @@ dist
 
 # End of https://www.toptal.com/developers/gitignore/api/linux,macos,visualstudiocode,node,dotenv
 /uploads
+/assets
+

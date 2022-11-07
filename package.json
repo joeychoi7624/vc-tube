@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "nodemon --exec babel-node src/server.js"
+    "dev:server": "nodemon",
+    "dev:assets": "webpack"
   },
   "repository": {
     "type": "git",
@@ -32,6 +33,14 @@
     "@babel/core": "^7.19.3",
     "@babel/node": "^7.19.1",
     "@babel/preset-env": "^7.19.4",
-    "nodemon": "^2.0.20"
+    "babel-loader": "^9.1.0",
+    "css-loader": "^6.7.1",
+    "mini-css-extract-plugin": "^2.6.1",
+    "nodemon": "^2.0.20",
+    "sass": "^1.56.0",
+    "sass-loader": "^13.1.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
   }
 }

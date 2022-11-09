@@ -1,2 +1,2 @@
 import "../scss/styles.scss";
-console.log("webpack setting");
+console.log("main");

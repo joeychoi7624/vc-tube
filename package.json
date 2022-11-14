@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/joeychoi7624/wetube#readme",
   "dependencies": {
+    "@ffmpeg/core": "^0.8.5",
+    "@ffmpeg/ffmpeg": "^0.9.7",
     "bcrypt": "^5.1.0",
     "connect-mongo": "^4.6.0",
     "dotenv": "^16.0.3",

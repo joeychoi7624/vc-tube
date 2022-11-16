@@ -95,19 +95,6 @@ const handleMouseLeave = () => {
   controlsTimeout = setTimeout(hideControls, 1000);
 };
 
-const handleSpacebarPressed = (event) => {
-  if (event.keyCode == 32) {
-    if (video.paused) {
-      event.preventDefault();
-      video.play();
-    } else {
-      event.preventDefault();
-      video.pause();
-    }
-    playBtnIcon.classList = video.paused ? "fas fa-play" : "fas fa-pause";
-  }
-};
-
 const handleEnded = () => {
   const { id } = videoContainer.dataset;
   fetch(`/api/videos/${id}/view`, {
@@ -116,20 +103,12 @@ const handleEnded = () => {
 };
 
 playBtn.addEventListener("click", handlePlayClick);
-
 muteBtn.addEventListener("click", handleMuteClick);
-
 volumeRange.addEventListener("input", handleVolumeChange);
-
 video.addEventListener("loadedmetadata", handleLoadedMetadata);
 video.addEventListener("timeupdate", handleTimeUpdate);
 video.addEventListener("ended", handleEnded);
-
 videoContainer.addEventListener("mousemove", handleMouseMove);
 videoContainer.addEventListener("mouseleave", handleMouseLeave);
-
 timeline.addEventListener("input", handleTimelineChange);
-
 fullScreenBtn.addEventListener("click", handleFullscreen);
-
-body.addEventListener("keydown", handleSpacebarPressed);

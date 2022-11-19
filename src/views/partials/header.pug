@@ -19,7 +19,7 @@ header
                             span 😀
                         else
                             if loggedInUser.avatarUrl
-                                if loggedInUser.avatarUrl.includes("github" || "aws")
+                                if loggedInUser.avatarUrl.includes("github") || isHeroku
                                     img.header__avatar(src=loggedInUser.avatarUrl crossorigin)
                                 else
                                     img.header__avatar(src="/" + loggedInUser.avatarUrl crossorigin)

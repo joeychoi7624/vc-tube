@@ -145,27 +145,20 @@ export const logout = (req, res) => {
 export const getEdit = (req, res) => {
   return res.render("edit-profile", { pageTitle: "Edit Profile" });
 };
-
 export const postEdit = async (req, res) => {
   const {
-    body: { name, email, username, location },
     session: {
       user: { _id, avatarUrl },
     },
+    body: { name, email, username, location },
     file,
   } = req;
-
-  const exists = await User.exists({ $or: [{ username }, { email }] });
-  if (exists) {
-    return res.render("edit-profile", {
-      pageTitle: "Edit Profile",
-      errorMessage: "username/email already exist",
-    });
-  }
+  console.log(file);
+  const isHeroku = process.env.NODE_ENV === "production";
   const updatedUser = await User.findByIdAndUpdate(
     _id,
     {
-      avatarUrl: file ? file.path : avatarUrl,
+      avatarUrl: file ? (isHeroku ? file.location : file.path) : avatarUrl,
       name,
       email,
       username,

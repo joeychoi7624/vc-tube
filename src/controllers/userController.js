@@ -225,7 +225,6 @@ export const see = async (req, res) => {
       model: "User",
     },
   });
-  console.log(user);
   if (!user) {
     return res
       .status(404)

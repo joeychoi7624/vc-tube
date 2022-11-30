@@ -3,6 +3,7 @@
   position: relative;
   video {
     width: 100%;
+    border-radius: 10px;
   }
   .videoControls {
     opacity: 0;
@@ -22,7 +23,8 @@
     grid-template-columns: 1fr 4fr 1fr auto;
     gap: 10px;
     justify-content: space-between;
-    background-color: #0f1117;
+    background-color: whitesmoke;
+    color: black;
     padding: 10px;
     left: 0;
     box-sizing: border-box;
